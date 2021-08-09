@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Global, css } from '@emotion/react'
 import styled from '@emotion/styled'
-import { FaTwitter, FaBehance, FaCodepen, FaLinkedin, FaVimeo } from "react-icons/fa";
+import { FaTwitter, FaBehance, FaCodepen, FaLinkedinIn, FaVimeoV } from "react-icons/fa";
 import { SiCodesandbox } from "react-icons/si";
 
 const IconLink = styled("a")`
@@ -25,6 +25,7 @@ const StyledSocialIcon = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
+
   .social-label{
     background: #007D76;
     padding: 4px 8px;
@@ -68,7 +69,7 @@ const GlobalStyles = () => <Global
 styles={css`
   html {
     box-sizing: border-box;
-    min-height: -webkit-fill-available;
+    height: -webkit-fill-available;
   }
 
   h2 {
@@ -186,13 +187,13 @@ export default function Home() {
           label={"LinkedIn"}
           linkUrl={"https://www.linkedin.com/in/alanbrowndesign/"}
         >
-          <FaLinkedin />
+          <FaLinkedinIn />
         </SocialIcon>
         <SocialIcon
           label={"Vimeo"}
           linkUrl={"https://vimeo.com/alanbrowndesign"}
         >
-          <FaVimeo />
+          <FaVimeoV/>
         </SocialIcon>
         {/* <IconLink href="https://behance.net/alanbrowndesign" target="_blank"><FaCodepen /></IconLink>
         <IconLink href="https://behance.net/alanbrowndesign" target="_blank"><SiCodesandbox /></IconLink> */}

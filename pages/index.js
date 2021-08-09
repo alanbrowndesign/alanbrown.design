@@ -164,7 +164,7 @@ export default function Home() {
          <StyledHeading>Alan Brown</StyledHeading>
          <StyledSubHeading>Lead UI/UX Designer</StyledSubHeading>
          <StyledAnnotation>Working on it...</StyledAnnotation>
-         <StyledPara>Currently building a new site. <br /> In the meantime, <a href="mailto:hello@alanbrown.design">say hello</a> or check me out on these links:</StyledPara>
+         <StyledPara>Currently building a new site. In the meantime, <a href="mailto:hello@alanbrown.design">say hello</a> or check me out on these links:</StyledPara>
       </h2>
       <StyledLinks>
         <SocialIcon

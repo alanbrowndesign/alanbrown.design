@@ -68,6 +68,7 @@ const GlobalStyles = () => <Global
 styles={css`
   html {
     box-sizing: border-box;
+    min-height: -webkit-fill-available;
   }
 
   h2 {
@@ -81,6 +82,7 @@ styles={css`
   body {
     background: #1D202B;
     min-height: 100vh;
+    min-height: -webkit-fill-available;
     margin: 0;
     padding: 0 24px;
     display: flex;
@@ -131,6 +133,7 @@ const StyledPara = styled.div`
   a {
     text-decoration: underline;
     font-weight: 500;
+    white-space: nowrap;
   }
 `
 

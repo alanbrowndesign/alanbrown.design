@@ -35,13 +35,11 @@ const StyledSocialIcon = styled.div`
     transition: 0.2s opacity ease, 0.2s transform ease;
     transform: translateY(10px);
     color: #fff;
+    opacity: 0;
   }
 
 
   @media(hover: hover){
-    .social-label {
-      opacity: 0;
-    }
 
     &:hover {
       .social-label {

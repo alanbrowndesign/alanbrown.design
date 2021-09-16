@@ -40,7 +40,7 @@ const TypeData = {
         defaultStyle: "display",
         defaultWeight: "medium",
         lineHeight: {
-            default: 1.3,
+            default: 1.2,
             tight: 1.1,
         },
     },
@@ -58,7 +58,7 @@ const TypeData = {
         defaultStyle: "text",
         defaultWeight: "medium",
         lineHeight: {
-            default: 1.2,
+            default: 1.3,
             tight: 1.1,
         },
     },
@@ -94,8 +94,8 @@ const TypeData = {
         defaultStyle: "text",
         defaultWeight: "medium",
         lineHeight: {
-            default: 1.4,
-            tight: 1.2,
+            default: 1.5,
+            tight: 1.3,
         },
     },
 };

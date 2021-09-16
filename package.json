@@ -8,16 +8,29 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "babelMacros": {
+    "twin": {
+      "preset": "stitches",
+      "stitchesConfig": "/styles/stitchesConfig.js"
+    }
+  },
   "dependencies": {
+    "@emotion/babel-plugin": "^11.3.0",
+    "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
+    "@stitches/react": "^1.1.0",
+    "babel-plugin-macros": "^3.1.0",
     "classnames": "^2.3.1",
+    "framer-motion": "^4.1.17",
     "next": "^11.1.0",
     "normalize.css": "^8.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
-    "sass": "^1.38.0"
+    "sass": "^1.38.0",
+    "tailwindcss": "^2.2.15",
+    "twin.macro": "^2.7.0"
   },
   "devDependencies": {
     "eslint": "7.32.0",

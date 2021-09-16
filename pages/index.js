@@ -1,13 +1,11 @@
-import Link from "next/link";
 import { PageWrapper } from "layouts";
-import { Button } from "components";
-
-import { IntroSection } from "pages/Home";
+import { IntroSection, ExperienceSection } from "components/Pages";
 
 export default function Home() {
     return (
         <PageWrapper>
             <IntroSection />
+            <ExperienceSection />
         </PageWrapper>
     );
 }

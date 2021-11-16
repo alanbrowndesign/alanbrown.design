@@ -1,13 +1,27 @@
-import { globalStyles } from "twin.macro";
 import { globalCss } from "./stitchesConfig";
 
-export const twGlobal = globalCss(globalStyles);
 export const global = globalCss(
-    { twGlobal },
-
     {
+        "*, *::before, *::after": {
+            boxSizing: "border-box",
+        },
+        "h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd": {
+            margin: 0,
+        },
+        "html, body": {
+            margin: 0,
+            padding: 0,
+        },
         body: { "min-height": "100vh" },
+        "input, button, textarea, select": {
+            font: "inherit",
+        },
+        button: {
+            border: 0,
+            cursor: "pointer",
+        },
     },
+
     {
         ":root": {
             /* Spacing */
@@ -107,6 +121,8 @@ export const global = globalCss(
             fontWeight: "var(--fontWeights-light)",
             minWidth: "20rem",
             fontSize: "var(--fontSizes-0)",
+            fontSmooth: "antialiased",
+            "-webkit-font-smoothing": "antialiased",
         },
     }
 );

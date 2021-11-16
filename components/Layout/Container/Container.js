@@ -1,9 +1,12 @@
 import { styled } from "styles/stitchesConfig";
 
-const StyledContainer = styled("div", {
+export const Container = styled("div", {
     width: "100%",
     mx: "auto",
     px: "$s",
+    "@sm": {
+        px: "$m",
+    },
 
     variants: {
         width: {
@@ -23,8 +26,3 @@ const StyledContainer = styled("div", {
         width: "max",
     },
 });
-
-export const Container = (props) => {
-    const { width, children } = props;
-    return <StyledContainer width={width}>{children}</StyledContainer>;
-};

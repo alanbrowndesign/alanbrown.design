@@ -2,10 +2,43 @@ import Image from "next/image";
 import profilePic from "assets/images/profilepic.png";
 import { styled } from "styles/stitchesConfig";
 import { remcalc, fluidSizeCalc } from "tokens/tools";
-import { motion } from "framer-motion";
-import tw from "twin.macro";
+import { Structure, WaveSVG } from "components";
+// import { motion } from "framer-motion";
 
 import { Button } from "components";
+
+const ShowBreakpoint = styled("div", {
+    width: "max-content",
+    background: "$accentDark",
+    position: "fixed",
+    left: 8,
+    top: 8,
+    zIndex: "$levelMax",
+    fontSize: "$-1",
+    padding: "8px 16px",
+    opacity: 0.9,
+    fontWeight: "$medium",
+    color: "white",
+    borderRadius: "$rounded",
+    "&::before": {
+        content: "Breakpoint: ",
+    },
+    "&::after": {
+        content: "xs",
+        "@sm": {
+            content: "sm",
+        },
+        "@md": {
+            content: "md",
+        },
+        "@lg": {
+            content: "lg",
+        },
+        "@xl": {
+            content: "xl",
+        },
+    },
+});
 
 const MainHeading = styled("h1", {
     textAlign: "center",
@@ -123,37 +156,11 @@ function HelloArrowSVG(props) {
     );
 }
 
-const StyledWaveSVG = styled("svg", {
-    width: "100%",
-    position: "absolute",
-    left: 0,
-    right: 0,
-    bottom: 0,
-});
-
-const WaveSVG = () => {
-    return (
-        <StyledWaveSVG
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1992 98"
-        >
-            <path
-                d="M1458.49 48c-96.28 9.56-189.5 26.7-285.52 37.08-136.76 14.81-279.2 15.71-415.74.35-132.7-14.9-270.3-51.21-401.43-69.67C239.52-.6 112.56-7.34 0 13.11V98h1992V73.77C1821.91 39.35 1637.4 30.44 1458.49 48Z"
-                fill="#E5F9FC"
-            />
-        </StyledWaveSVG>
-    );
-};
-
 const StyledImage = styled("div", {
     "--photo-sm": fluidSizeCalc(3.5),
     "--photo-lg": fluidSizeCalc(4.5),
-    size: "var(--photo-sm)",
+    size: "var(--photo-lg)",
     position: "relative",
-    "@sm": {
-        size: "var(--photo-lg)",
-    },
     "&::before": {
         content: "",
         display: "block",
@@ -182,13 +189,14 @@ const Wrapper = styled("div", {
     alignItems: "center",
     justifyContent: "center",
     gap: "$m",
-    background: "$white",
     padding: "$s",
     paddingTop: "3em",
     paddingBottom: "5em",
     position: "relative",
+    backgroundImage: `url("data:image/svg+xml,%3Csvg width='174' height='174' viewBox='0 0 174 174' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 0H7V7H0V8H7V15H8V8H15V7H8V0Z' fill='%23E9E9E9'/%3E%3C/svg%3E%0A")`,
+    backgroundAttachment: "fixed",
     "@sm": {
-        minHeight: `clamp(${remcalc(600)}, 90vh, ${remcalc(1000)})`,
+        minHeight: `clamp(${remcalc(700)}, 90vh, ${remcalc(800)})`,
         py: 0,
     },
     "@md": {
@@ -208,34 +216,52 @@ const StyledIntroContent = styled("div", {
     "@lg": {
         transform: "translateY(-1.5em)",
     },
+
+    ".intro-para": {
+        fontSize: "$2",
+        textAlign: "center",
+        mx: "auto",
+        maxWidth: "50ch",
+        lineHeight: "$snug",
+        color: "$primaryDark",
+    },
 });
 
 export function IntroSection(props) {
     const { text } = props;
     return (
         <Wrapper>
+            {/* <ShowBreakpoint /> */}
             <StyledIntroContent>
                 <StyledImage>
                     <Image src={profilePic} layout={"fill"} quality={100} />
                 </StyledImage>
-                <div tw="flex flex-col items-center space-y-s">
-                    <div tw="flex flex-col items-center space-y-xs">
+                <Structure
+                    justify={"center"}
+                    items={"center"}
+                    css={{ spaceY: "$s" }}
+                >
+                    <Structure
+                        justify={"center"}
+                        items={"center"}
+                        css={{ spaceY: "$xs" }}
+                    >
                         <MainHeading>
                             <HelloArrowSVG />
                             <span className="heading-hello">Hello,</span>{" "}
                             I&rsquo;m <span>Alan</span>. A Lead UI &amp; UX{" "}
                             <span>Design Systems</span> consultant
                         </MainHeading>
-                        <p tw="text-size-2 text-center mx-auto max-width[50ch] leading-snug text-primaryDark ">
+                        <p className={"intro-para"}>
                             Highly experienced in building large scale Design
                             Systems, leading teams and creating new design
                             workflows
                         </p>
-                    </div>
-                    <Button text="Hire me" />
-                </div>
+                    </Structure>
+                    <Button size="large" text="Hire me" href="/splash" />
+                </Structure>
             </StyledIntroContent>
-            <WaveSVG />
+            <WaveSVG color={"#E5F9FC"} />
             <FindOutMoreSVG />
         </Wrapper>
     );

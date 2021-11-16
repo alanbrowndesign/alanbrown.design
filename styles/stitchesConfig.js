@@ -122,18 +122,28 @@ export const {
     utils: {
         mx: (value) => ({ marginLeft: value, marginRight: value }),
         my: (value) => ({ marginTop: value, marginBottom: value }),
+
         px: (value) => ({ paddingLeft: value, paddingRight: value }),
         py: (value) => ({ paddingTop: value, paddingBottom: value }),
+
         size: (value) => ({ width: value, height: value }),
         spaceY: (value) => ({
-            "& > * + *": {
+            "& > :not([hidden]) ~ :not([hidden])": {
                 marginTop: value,
             },
         }),
         spaceX: (value) => ({
-            "& > * + *": {
+            "& > :not([hidden]) ~ :not([hidden])": {
                 marginLeft: value,
             },
+        }),
+
+        absolute: (value = [0, 0, 0, 0]) => ({
+            position: "absolute",
+            top: value[0],
+            right: value[1],
+            bottom: value[2],
+            left: value[3],
         }),
         text: (value) =>
             value == "$hero"

@@ -4,7 +4,7 @@ import { Navbar } from "components";
 
 export function PageWrapper(props) {
     global();
-    const { children, title, description } = props;
+    const { children, title, description, navBacking } = props;
     return (
         <>
             <Head>
@@ -30,7 +30,7 @@ export function PageWrapper(props) {
                 />
             </Head>
 
-            <Navbar />
+            <Navbar navBacking={navBacking} />
             {children}
         </>
     );

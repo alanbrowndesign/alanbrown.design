@@ -1,55 +1,92 @@
 import { styled } from "styles/stitchesConfig";
-import { Container } from "components";
-import tw from "twin.macro";
+import { Container, HeadingLockup, Structure, WaveSVG } from "components";
+import SkyLogo from "assets/images/skylogoframe.png";
+import Image from "next/image";
 
 const SectionWrapper = styled("div", {
     background: "linear-gradient(180deg, #E5FAFC 0%, #F1F8F9 16.84%);",
-    py: "$3xl",
+    paddingTop: "$3xl",
+    paddingBottom: "calc($3xl * 2.6)",
+    overflow: "hidden",
+    position: "relative",
 });
 
-const StyledLockUp = styled("div", {
-    fontSize: "$subhead",
-    maxWidth: "60ch",
-    spaceY: "$2xs",
-    h2: {
-        fontSize: "$titleCharlie",
-        fontWeight: "$medium",
-        color: "$accentDark",
-    },
-    h3: {
-        fontSize: "$titleAlpha",
-        fontWeight: "$medium",
-        color: "$primaryDark",
-        maxWidth: "28ch",
-        lineHeight: "$tight",
+const LogoContainer = styled("div", {
+    width: "clamp(11rem, 25vw, 14rem)",
+});
+
+const LogoInner = styled("div", {
+    background: "white",
+    boxShadow:
+        "inset 0px 0px 4.5px 1.86px rgba(0, 0, 0, 0.085), 0px 4px 36px rgba(0, 100, 150, 0.36), 0px 4px 6px rgba(0, 0, 0, 0.08), 0px -2px 1px rgba(0, 0, 0, 0.02)",
+    width: "100%",
+    height: 0,
+    paddingTop: "75%",
+    overflow: "hidden",
+    borderRadius: "1rem",
+    zIndex: "$level1",
+    transform: "translate(-24px, 32px)",
+    position: "relative",
+    "&::before": {
+        content: "",
+        display: "block",
+        background:
+            "radial-gradient(86.7% 86.7% at 50% 50%, #FFFFFF 43.48%, #F2F0FF 100%)",
+        absolute: ["0.6rem", "0.6rem", "0.6rem", "0.6rem"],
+        borderRadius: "0.4rem",
     },
 });
 
-const HeadingLockup = (props) => {
-    const {} = props;
-    return (
-        <StyledLockUp>
-            <h2>Experience</h2>
-            <h3>
-                I can help you build a scalable Design System for your business
-            </h3>
-            <p>
-                I’ve helped some of the UK’s largest businesses set up
-                enterprise-scale Design System solutions. Etiam habebis sem
-                dicantur magna mollis euismod. Vivamus sagittis lacus vel augue
-                laoreet rutrum faucibus.
-            </p>
-        </StyledLockUp>
-    );
-};
+const FrameContainer = styled("div", {
+    width: 700,
+    height: "25rem",
+    backgroundColor: "$white",
+    position: "absolute",
+    zIndex: "$level0",
+    borderRadius: "$space$2xs",
+    boxShadow:
+        "0px 0px 4.5px 2px rgba(0, 0, 0, 0.03), 0px 0px 20px 10px rgba(0, 90, 160, 0.07)",
+});
+
+const GridWrapper = styled("div", {
+    display: "grid",
+    gap: "$m",
+    "@md": {
+        gridTemplateColumns: "4fr 3fr",
+    },
+});
 
 export function ExperienceSection(props) {
     const { text } = props;
     return (
         <SectionWrapper>
             <Container width="max">
-                <HeadingLockup />
+                <GridWrapper>
+                    <HeadingLockup
+                        smallHeading={"Experience"}
+                        mainHeading={
+                            "I can help you build a scalable Design System for your business"
+                        }
+                    />
+                    <Structure
+                        horizontal
+                        items={"end"}
+                        css={{
+                            overflowX: "visible",
+                            minHeight: "25rem",
+                            position: "relative",
+                        }}
+                    >
+                        <LogoContainer>
+                            <LogoInner>
+                                <Image src={SkyLogo} layout={"fill"} />
+                            </LogoInner>
+                        </LogoContainer>
+                        <FrameContainer></FrameContainer>
+                    </Structure>
+                </GridWrapper>
             </Container>
+            <WaveSVG color={"#FFFDF0"} />
         </SectionWrapper>
     );
 }

@@ -78,7 +78,7 @@ export function ExperienceSection() {
                     >
                         <LogoContainer>
                             <LogoInner>
-                                <Image src={SkyLogo} layout={"fill"} />
+                                <Image src={SkyLogo} layout={"fill"} alt="Sky Logo" />
                             </LogoInner>
                         </LogoContainer>
                         <FrameContainer></FrameContainer>

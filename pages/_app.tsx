@@ -5,16 +5,14 @@ import type { AppProps } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { scrollY } = useViewportScroll();
-    useEffect(
-        () =>
+    useEffect(() => {
             scrollY.onChange(() => {
                 scrollY.get() >= 100
                     ? updateShowNavBacking(true)
                     : updateShowNavBacking(false);
                 console.log(scrollY);
-            }),
-        []
-    );
+            })
+        },[scrollY]);
     const [showNavBacking, updateShowNavBacking] = useState(false);
     return (
         <PageWrapper navBacking={showNavBacking}>

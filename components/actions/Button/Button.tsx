@@ -100,6 +100,8 @@ export const Button = forwardRef(({ href, text, icon, size } : ButtonProps, ref:
     );
 });
 
+Button.displayName = "Button";
+
 Button.defaultProps = {
     text: "Button",
     icon: false,

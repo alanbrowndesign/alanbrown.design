@@ -173,7 +173,7 @@ export function Navbar(props: any) {
                         />
                         <NavLink name={"Projects"} href={"/projects"} />
 
-                        <a href="https://blog.alanbrown.design" target="_blank">
+                        <a href="https://blog.alanbrown.design" target="_blank" rel="noreferrer">
                             Blog
                         </a>
                         <NavLink name={"Contact"} href={"/contact"} />

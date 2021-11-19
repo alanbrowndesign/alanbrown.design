@@ -201,7 +201,7 @@ export function IntroSection(props: any) {
 
             <StyledIntroContent>
                 <StyledImage>
-                    <Image src={profilePic} layout={"fill"} quality={100} />
+                    <Image src={profilePic} layout={"fill"} quality={100} alt="Alan Brown" />
                 </StyledImage>
                 <Structure
                     justify={"center"}

@@ -5,7 +5,6 @@ import { remcalc, fluidSizeCalc } from "tokens/tools";
 import { Structure, WaveSVG } from "components";
 import { Button } from "components";
 
-
 const MainHeading = styled("h1", {
     textAlign: "center",
     color: "#0D005C",
@@ -128,6 +127,7 @@ const StyledImage = styled("div", {
     size: "var(--photo-lg)",
     position: "relative",
     borderRadius: 999,
+
     "&::before": {
         content: "",
         display: "block",
@@ -198,10 +198,14 @@ export function IntroSection(props: any) {
     const { text } = props;
     return (
         <Wrapper>
-
             <StyledIntroContent>
                 <StyledImage>
-                    <Image src={profilePic} layout={"fill"} quality={100} alt="Alan Brown" />
+                    <Image
+                        src={profilePic}
+                        layout={"fill"}
+                        quality={100}
+                        alt="Alan Brown"
+                    />
                 </StyledImage>
                 <Structure
                     justify={"center"}
